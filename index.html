@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Vertical Menu</title>
+    <style>
+        /* Vertical Navigation */
+        .nav-vertical {
+            width: 250px;
+            background: #34495e;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .nav-vertical ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-vertical li {
+            position: relative;
+            border-bottom: 1px solid #2c3e50;
+        }
+        
+        .nav-vertical a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-vertical a:hover {
+            background: #2c3e50;
+            padding-left: 25px;
+        }
+        
+        /* Dropdown Indicators */
+        .nav-vertical li > a::after {
+            content: "›";
+            float: right;
+            transform: rotate(90deg);
+            transition: transform 0.3s;
+        }
+        
+        .nav-vertical li:hover > a::after {
+            transform: rotate(0deg);
+        }
+        
+        /* Dropdown Menu */
+        .nav-vertical ul ul {
+            display: none;
+            background: #2c3e50;
+        }
+        
+        .nav-vertical li:hover > ul {
+            display: block;
+        }
+        
+        .nav-vertical ul ul a {
+            padding-left: 30px;
+        }
+        
+        .nav-vertical ul ul ul a {
+            padding-left: 45px;
+        }
+        
+        /* Active State */
+        .nav-vertical a.active {
+            background: #e74c3c;
+            border-left: 4px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-vertical">
+        <ul>
+            <li><a href="#" class="active">Dashboard</a></li>
+            <li><a href="#">Products</a>
+                <ul>
+                    <li><a href="#">Web Templates</a></li>
+                    <li><a href="#">WordPress Themes</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Services</a>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Development</a>
+                        <ul>
+                            <li><a href="#">Frontend</a></li>
+                            <li><a href="#">Backend</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
